@@ -1,6 +1,6 @@
 spring :
   profiles :
-    active : local
+    active : aws
 ---
 spring :
   profiles: local
@@ -32,7 +32,7 @@ swagger :
 
 ---
 spring :
-  profiles: server
+  profiles: aws
   session :
     timeout: 600
   servlet:
