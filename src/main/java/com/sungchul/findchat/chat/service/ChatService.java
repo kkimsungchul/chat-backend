@@ -37,7 +37,7 @@ public class ChatService {
 
         retunrMessage =  "파일 업로드 성공";
         try{
-            file.transferTo(new File(fileName));
+            file.transferTo(new File(saveFileName));
         }catch (IOException e){
             retunrMessage =  "파일 업로드 실패";
             return retunrMessage;
