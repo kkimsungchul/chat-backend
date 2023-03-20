@@ -11,14 +11,13 @@ import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.rmi.ServerError;
+import java.util.HashMap;
 
 @Slf4j
 @RestController
@@ -27,6 +26,16 @@ import java.rmi.ServerError;
 public class ChatController {
 
     ChatService chatService;
+
+
+    @RequestMapping(value="/api/sso/user/check/insideCheck" , method = RequestMethod.POST)
+    public  ResponseEntity<String> createTest(HashMap<String,Object> map){
+        System.out.println("### map : " + map);
+
+        //return new ResponseEntity(HttpStatus.BAD_GATEWAY);
+        return new ResponseEntity(HttpStatus.OK);
+
+    }
 
     @GetMapping("/test")
     public String test(){
